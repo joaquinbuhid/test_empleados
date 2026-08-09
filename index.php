@@ -13,57 +13,46 @@
     <div class="brand">&#x1F6E1; TDV Seguridad</div>
 </nav>
 
-<div style="max-width:1200px;margin:0 auto;padding:1.2rem 1rem 2rem;">
-
-    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem;">
-        <h2 style="font-size:1.2rem;color:var(--primary);margin:0;">
-            Presencias - <span id="fechaHoy"></span>
-        </h2>
+<!-- Resumen -->
+<div class="summary-strip">
+    <div class="summary-card">
+        <div class="num num-presente"  id="cntPresente">0</div>
+        <div class="lbl">En turno</div>
     </div>
-
-    <!-- Resumen -->
-    <div class="summary-strip">
-        <div class="summary-card">
-            <div class="num num-presente"  id="cntPresente">0</div>
-            <div class="lbl">En turno</div>
-        </div>
-        <div class="summary-card">
-            <div class="num num-ausente"   id="cntAusente">0</div>
-            <div class="lbl">Ausentes</div>
-        </div>
-        <div class="summary-card">
-            <div class="num num-completado" id="cntCompletado">0</div>
-            <div class="lbl">Turno completo</div>
-        </div>
-        <div class="summary-card" id="cardSinSalida" style="display:none;">
-            <div class="num" style="color:#9a7d0a;" id="cntSinSalida">0</div>
-            <div class="lbl">Registro incompleto</div>
-        </div>
-        <div class="summary-card">
-            <div class="num num-total"     id="cntTotal">0</div>
-            <div class="lbl">Total</div>
-        </div>
+    <div class="summary-card">
+        <div class="num num-ausente"   id="cntAusente">0</div>
+        <div class="lbl">Ausentes</div>
     </div>
-
-    <!-- Barra de refresh -->
-    <div class="refresh-bar">
-        <span>Ultima actualizacion: <strong id="ultimaActz">-</strong></span>
-        <div style="display:flex;align-items:center;gap:.8rem;">
-            <span>Actualizando en <span class="refresh-countdown" id="countdown">30</span>s</span>
-            <button class="refresh-btn" onclick="refrescar()">&#x21BB; Ahora</button>
-        </div>
+    <div class="summary-card">
+        <div class="num num-completado" id="cntCompletado">0</div>
+        <div class="lbl">Turno completo</div>
     </div>
-
-    <!-- Grilla de tarjetas -->
-    <div class="cards-grid" id="cardsGrid">
-        <div style="color:var(--text-muted);font-size:.9rem;grid-column:1/-1;padding:2rem;text-align:center;">
-            <div class="spinner spinner-dark" style="margin:0 auto .8rem;"></div>
-            Cargando presencias...
-        </div>
+    <div class="summary-card" id="cardSinSalida" style="display:none;">
+        <div class="num" style="color:#9a7d0a;" id="cntSinSalida">0</div>
+        <div class="lbl">Registro incompleto</div>
     </div>
-
+    <div class="summary-card">
+        <div class="num num-total"     id="cntTotal">0</div>
+        <div class="lbl">Total</div>
+    </div>
 </div>
 
+<!-- Barra de refresh -->
+<div class="refresh-bar">
+    <span>Ultima actualizacion: <strong id="ultimaActz">-</strong></span>
+    <div style="display:flex;align-items:center;gap:.8rem;">
+        <span>Actualizando en <span class="refresh-countdown" id="countdown">30</span>s</span>
+        <button class="refresh-btn" onclick="refrescar()">&#x21BB; Ahora</button>
+    </div>
+</div>
+
+<!-- Grilla de tarjetas -->
+<div class="cards-grid" id="cardsGrid">
+    <div style="color:var(--text-muted);font-size:.9rem;grid-column:1/-1;padding:2rem;text-align:center;">
+        <div class="spinner spinner-dark" style="margin:0 auto .8rem;"></div>
+        Cargando presencias...
+    </div>
+</div>
 
 <script>
 function renderCards(guards) {
